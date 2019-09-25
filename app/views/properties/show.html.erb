@@ -1,0 +1,10 @@
+<h1><%= @property.address %></h1>
+
+  <ul>
+    <li>Bedrooms: <%= @property.bedrooms %></li>
+      <% if @property.garage %>
+        <li>Has Garage</li>
+      <% end %>
+  </ul>
+
+<%= link_to "Properties Index", properties_path %>
