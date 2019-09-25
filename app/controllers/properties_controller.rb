@@ -17,6 +17,23 @@ class PropertiesController < ApplicationController
     redirect_to properties_path
   end
 
+  def edit
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    @property = Property.find(params[:id])
+      if @property.update_attributes(properties_params)
+        flash[:success] = "Property was successfully updated"
+        redirect_to @property
+      else
+        flash[:error] = "Something went wrong"
+        render 'edit'
+      end
+  end
+  
+  
+
   private
 
   def properties_params
