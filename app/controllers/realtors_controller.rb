@@ -26,6 +26,13 @@ class RealtorsController < ApplicationController
     redirect_to realtor_path(@realtor)
   end
 
+  def destroy
+    @realtor = Realtor.find(params[:id])
+    @realtor.destroy
+    redirect_to realtors_path
+  end
+  
+
   private
   def realtor_params
     params.require(:realtor).permit(:name, :brokerage, :years_experience)
