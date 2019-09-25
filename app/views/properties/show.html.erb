@@ -7,6 +7,8 @@
       <% end %>
   </ul>
 
+<%= link_to  "Edit This Property", edit_property_path(@property) %><br><br>
+
 <%= link_to  "Delete This Property", @property, method: :delete %><br><br>
 
 <%= link_to "Properties Index", properties_path %>
