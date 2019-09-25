@@ -13,12 +13,18 @@ class PropertiesController < ApplicationController
   end
 
   def create
-    @property = Property.create(
-      address: params[:address],
-      bedrooms: params[:bedrooms],
-      garage: params[:garage]
-    )
-    redirect_to properties_path(@property)
+    @property = Property.create(properties_params)
+    redirect_to properties_path
+  end
+
+  private
+
+  def properties_params
+    params.require(:property).permit(
+    :address,
+    :bedrooms,
+    :garage
+  )
   end
 
 end

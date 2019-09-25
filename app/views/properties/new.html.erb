@@ -1,11 +1,11 @@
 <h1>Add New Property</h1>
 
-<%= form_with model: @property do |f| %>
-  <%= f.label :address %>:
-  <%= f.text_field :address %><br>
-  <%= f.label :bedrooms %>:
-  <%= f.number_field :bedrooms %><br>
-  <%= f.label :garage %>:
-  <%= f.select :garage, options_for_select([['Yes', true], ['No', false]]) %>
-  <%= f.submit "Submit" %>
+<%= form_for @property do |f| %>
+  <%= f.label :address %>
+  <%= f.text_field :address %></br>
+  <%= f.label :bedrooms %>
+  <%= f.number_field :bedrooms %></br>
+  <%= f.label :garage %>
+  <%= f.check_box :garage %><br>
+  <%= f.submit %>
 <% end %>
