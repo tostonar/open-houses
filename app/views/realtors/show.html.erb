@@ -1,4 +1,5 @@
 <h1><%= @realtor.name %></h1>
 <p>Brokerage: <%= @realtor.brokerage %></p>
 <p>Years of experience: <%= @realtor.years_experience %></p>
-<%= link_to  "Realtors Index", realtors_path %>
+<p><%= link_to  "Edit Realtor", edit_realtor_path(@realtor) %>
+<p><%= link_to  "Realtors Index", realtors_path %></p>
