@@ -31,6 +31,18 @@ class PropertiesController < ApplicationController
         render 'edit'
       end
   end
+
+  def destroy
+    @property = Property.find(params[:id])
+    if @property.destroy
+      flash[:success] = 'Property was successfully deleted.'
+      redirect_to properties_path
+    else
+      flash[:error] = 'Something went wrong'
+      redirect_to properties_path
+    end
+  end
+  
   
   
 
