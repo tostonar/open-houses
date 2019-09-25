@@ -1,0 +1,9 @@
+<%= form_for @realtor do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %></br>
+  <%= f.label :brokerage %>:
+  <%= f.text_field :brokerage %></br>
+  <%= f.label :years_experience %>:
+  <%= f.number_field :years_experience %><br><br>
+  <%= f.submit %>
+<% end %>
